@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/1194a10758.js" crossorigin="anonymous"></script>
+    <title>Diccionario</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div>
+        <header>
+          <a class="backmenu" href="/">
+            <i class="fa-solid fa-computer"></i> Menú principal</a>
+          <h1 align="center">
+            Slangs: <i class="fa-solid fa-arrow-down-z-a"></i>
+          </h1>
+        </header>
+        <i class="fa-solid fa-computer-classic"></i>
+          </div>
+          <div class="box">
+            <div class="palabras">
+                <table style="width:100%">
+                <tr>
+                    <th>Palabra</th>
+                    <th>Definición</th>
+                </tr>
+                {% for palabra in palabras %}
+                <tr class="palabras">
+                    <td> {{palabra["name"]}}:</td>
+                
+                    <td> {{palabra["definicion"]}}</td>
+                    {% endfor %}
+                </tr>
+                </table>              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <style>
+    table, th, td {
+  border:1px solid blueviolet;
+    }
+    .header--one p {
+  font-size: 2.5rem;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  margin: 100 100% auto;
+}
+
+.palabras{
+font-family: courier
+font-size 2.5em;
+}
+
+h1 {
+  color: blue;
+  font-family: verdana;
+  font-size: 300%;
+}
+
+.wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+.card {
+  padding: 2rem;
+
+  border-radius: 5px;
+}
+  </style>
+</html>

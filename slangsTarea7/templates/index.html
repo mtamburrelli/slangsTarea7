@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/1194a10758.js" crossorigin="anonymous"></script>
+    <title>Le Diccionario</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="layout">
+        <header class="header--one card">
+          <h1>¡Diccionario de Slangs Panameños!</h1> 
+        </header>
+        <i class="fa-regular fa-book-circle-arrow-up"></i>        
+        <main class="content--one card">
+          <h2>Comienza por agregar una palabra</h2>
+          <span><i class="fa-regular fa-comment-smile"></i></span>
+          <form method="post" action="/" >
+            <input type="text" name="word" id="word" placeholder="Ingrese un slang" />
+            </br></br>
+            <div>
+            <input type="text" name="meaning" id="meaning" placeholder="Ingrese un significado" />
+            </div>
+            </br>
+            <input class="btn-submit"  type="submit" value="Agregar" />
+            <h3>Bienvenido</h3>
+          <p>
+            Aquí podrás: editar, eliminar, visualizar y buscar el significado de los slangs
+          </p>
+        </main>
+
+        <aside class="aside--one card">
+          <a href="/editar">Editar Slang Existente</a>
+          <a href="/eliminar">Eliminar Slang</a>
+          <a href="/diccionario">Ver Diccionario</a>
+          <a href="/definicion">Buscar Definición</a>
+        </aside>
+      </div>
+    </div>
+  </body>
+  <style>
+h1 {
+  color: blue;
+  font-family: verdana;
+  font-size: 300%;
+}
+p {
+  color: green;
+  font-family: courier;
+  font-size: 160%;
+}
+
+
+    .aside--one {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  height: 100%;
+  background-color: var(--ui-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  row-gap: 1rem;
+}
+
+.btn-submit:hover {
+  background-color: #80e907c7;
+}
+
+  </style>
+
+</html>

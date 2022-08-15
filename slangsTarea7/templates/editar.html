@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="static/styles.css" media="screen" />
+    <script src="https://kit.fontawesome.com/1194a10758.js" crossorigin="anonymous"></script>
+    <title>Editar Slang</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div>
+        <a class="backmenu" href="/"
+        ><i class="fa-solid fa-computer"></i> Menú princial</a>
+        <header class="header--one card">
+          <h1>
+            Editar Slang
+          </h1>
+        </header>
+        </br>
+          <form action="" class="form-box-inputs" method="POST">
+            <div class="box">
+              {% if message %}
+              <p class="msg">
+                La palabra no existe <i class="fa-solid fa-thumbs-down"></i>
+              </p>
+              {% endif %} {% if message == False %}
+              <p class="msg">
+                ¡La palabra ha sido editada!<i class="fa-solid fa-face-smile-plus"></i>
+              </p>
+              {% endif %}
+              <div class="fieldset">
+                <label for="">Palabra a Actualizar</label>
+                <input type="text" name="oldWord" />
+              </div>
+              <div>
+                <label for="">Palabra Nueva</label>
+                <input type="text" name="word" />
+              </div>
+              <div>
+                <label for="">Definicion Nueva</label>
+                <input type="text" name="meaning" id="" rows="5"></input>
+              </div>
+              <button
+                onclick="(e) => e.preventDefault()"
+                type="submit"
+                class="btn-submit"
+              >
+                Editar
+              </button>
+              <p>{{name}}</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <style>
+
+p {
+  font-size: bold;
+  font-family: courier;
+}
+
+    .form-box--img {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.form-box--img img {
+  width: 100%;
+}
+
+
+
+
+
+fieldset{
+border:none;
+width:500px;
+margin:0px auto;
+}
+  </style>
+</html>

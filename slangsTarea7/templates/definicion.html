@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <script src="https://kit.fontawesome.com/1194a10758.js" crossorigin="anonymous"></script>
+    <title>Definicion</title>
+  </head>
+  <body>
+    <div class="wrap">
+      <div>
+        <a class="backmenu" href="/"
+        ><i class="fa-solid fa-computer"></i> Menú principal</a>
+        <header class="header--one card">
+          <h1>
+            Buscar Slang en el Diccionario
+            <span> <i class="fa-solid fa-alien-8bit"></i></span>
+          </h1>
+        </header>
+
+        <div class="form-box-left">
+          <form action=""  method="POST">
+              {% if message %}
+              <p class="msg">
+                La palabra no existe <i class="fa-solid fa-thumbs-down"></i>
+              </p>
+              {% endif %}
+              <div>
+                <label for="">Palabra a Buscar</label>
+                <input type="text" name="palabra" />
+              </div>
+
+              <div class="defBox">
+                {% if showPalabra %}
+                <p>Palabra: {{showPalabra["palabra"]}}</p>
+                <p>Definicion: {{showPalabra["definicion"]}}</p>
+                {% endif %}
+              </div>
+
+              <button
+                onclick="(e) => e.preventDefault()"
+                type="submit"
+                class="btn-submit"
+              >
+                Buscar Definición
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+  <style>
+        label{
+        align-self: left;
+        font-size:large;
+    }
+    input{
+        align-self: left;
+        font-size:large;
+    }
+  </style>
+</html>

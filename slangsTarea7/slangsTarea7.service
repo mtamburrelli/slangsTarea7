@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance to serve slangsTarea7
+After=network.target
+
+[Service]
+User=migueltamburrelli
+Group=www-data
+WorkingDirectory=/home/migueltamburrelli/slangsTarea7
+Environment="PATH=/home/migueltamburrelli/slangsTarea7/myenv/bin"
+ExecStart=/home/migueltamburrelli/slangsTarea7/myenv/bin/gunicorn --workers 3 --bind unix:slangsTarea7.sock -m 007 wsgi:app
+
+[Install]
+WantedBy=multi-user.target
